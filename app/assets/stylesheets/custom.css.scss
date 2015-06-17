@@ -1,0 +1,133 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+   h1 {
+  margin-bottom: 10px;
+  }
+}
+
+
+
+.home-logo {
+	max-width: 100%;
+	height: auto;
+	margin-top: -80px;
+	text-align: center;
+
+}
+
+.sign-up {
+	margin-top: -55px;
+}
+
+.navbar {
+	opacity: 0.8;
+	background-color: black;
+}
+
+.nav {
+	color:black;
+}
+
+.navbar-nav > li > a {
+	color: white !important;
+	opacity: 1;
+	font-weight: bolder;
+	font-size: 15px;
+}
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+h4 {
+	color:white;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+#logo {
+  margin-top: -9px;
+  float: left;
+  margin-right: 10px;
+  font-size: 2.5em;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 2px;
+  font-weight: bolder;
+  font-family:BellotaBold;
+&:hover {
+  color: rgb(71, 137, 207);
+  text-decoration: none;
+  }
+}
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
