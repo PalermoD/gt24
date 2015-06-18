@@ -22,6 +22,18 @@ textarea {
   }
 }
 
+.btn {
+  background-color:rgb(219, 60, 58);
+  border-color:rgb(219, 60, 58);
+  font-family: Century Gothic, sans-serif;
+}
+
+.btn:hover {
+  background-color: black;
+  border-color: white;
+  font-family: Century Gothic, sans-serif;
+}
+
 
 
 .home-logo {
@@ -48,13 +60,13 @@ textarea {
 .navbar-nav > li > a {
 	color: white !important;
 	opacity: 1;
-	font-weight: bolder;
 	font-size: 15px;
 }
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  font-family: Century Gothic, sans-serif;
 }
 
 h1 {
@@ -85,19 +97,23 @@ p {
 
 /* header */
 
+header {
+  font-family: Century Gothic, sans-serif;
+}
+
 #logo {
   margin-top: -9px;
   float: left;
   margin-right: 10px;
   font-size: 2.5em;
-  color: white;
+  color: rgb(219, 60, 58);
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 2px;
   font-weight: bolder;
   font-family:BellotaBold;
 &:hover {
-  color: rgb(71, 137, 207);
+  color: white;
   text-decoration: none;
   }
 }

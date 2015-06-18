@@ -24,7 +24,4 @@ class StaticPagesControllerTest < ActionController::TestCase
     assert_response :success
     assert_select "title", "Contact | New York's very own social network and media experience"
   end
-
-
-
 end
