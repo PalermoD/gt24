@@ -65,7 +65,7 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    posts
+    Post.where("user_id = ?", id)
   end 
 
   private 
