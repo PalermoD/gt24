@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
-	before_action :loged_in_user, only: [:create, :destroy]
+	before_action :logged_in_user, only: [:create, :destroy]
 
 	def create
-		@post = current_user.microposts.build(post_params)
+		@post = current_user.posts.build(post_params)
         if @post.save
           redirect_to root_url
         else

@@ -191,10 +191,14 @@ aside {
 .gravatar {
   float: left;
   margin-right: 10px;
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50%;
 }
 
 .gravatar_edit {
   margin-top: 15px;
+  
 }
 
 /* forms */
@@ -216,6 +220,10 @@ input {
     color: red;
     margin: 0 0 30px 0;
   }
+}
+
+a {
+  color:rgb(219, 60, 58);
 }
 
 .alert {
