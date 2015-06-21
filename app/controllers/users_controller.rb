@@ -46,6 +46,10 @@ before_action :admin_user, only: :destroy
       redirect_to users_url
   end
 
+  def feed 
+     Post.where("user_id = ?", id)
+  end 
+
   private
 
     def user_params
