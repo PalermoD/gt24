@@ -7,6 +7,8 @@ class PostsController < ApplicationController
     
   end 
 
+  
+
 	def create
      @post = current_user.posts.build(post_params)
         if @post.save
@@ -18,7 +20,8 @@ class PostsController < ApplicationController
 	end 
 
 	def destroy
-		redirect_to request.referrer || root_url
+    @post.destroy
+		redirect_to root_url
 	end 
 
 	private 

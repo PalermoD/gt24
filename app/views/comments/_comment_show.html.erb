@@ -9,8 +9,8 @@
  <span class="timestamp">
 
 
-  <% if current_user?(@post.user) %>
-  <%= link_to "delete", @post, method: :delete, data: { confirm: "You sure?" } %>
+  <% if current_user?( comment.post ) %>
+  <%= link_to "delete", comment.post, method: :delete, data: { confirm: "You sure?" } %>
   <% end %>
 
 </span>
