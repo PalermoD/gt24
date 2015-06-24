@@ -4,12 +4,10 @@ class PostsController < ApplicationController
 
   def show 
     @post = Post.find(params[:id])
-    
+
   end 
 
-  
-
-	def create
+  def create
      @post = current_user.posts.build(post_params)
         if @post.save
           redirect_to root_url
