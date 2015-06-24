@@ -1,0 +1,18 @@
+<% @post.comments.each do |comment| %>
+<li id="post-<%= @post.id %>">
+ <%= link_to gravatar_for(@post.user), @post.user %>
+ <span class="user"><%= link_to @post.user.name, @post.user %></span>
+
+ <span class="content"><%= comment.content %></span>
+
+ <%= image_tag comment.picture.url if comment.picture? %>
+ <span class="timestamp">
+
+
+  <% if current_user?(@post.user) %>
+  <%= link_to "delete", @post, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
+
+</span>
+</li>
+<% end %>
