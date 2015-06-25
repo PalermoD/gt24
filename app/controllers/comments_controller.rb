@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 	end 
 
 	def destroy 
-		@comment.destroy
+		@post.comment.destroy
 		redirect_to request.referrer || root_url
 	end 
 

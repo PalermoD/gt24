@@ -7,12 +7,13 @@
 
  <%= image_tag comment.picture.url if comment.picture? %>
  <span class="timestamp">
+    Posted <%= time_ago_in_words( comment.created_at) %> ago.
+ 
+  <% if current_user?(@post.user) %>
+     <%= link_to "delete", @post, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+    <% end %>
 
-
-  <% if current_user?( comment.post ) %>
-  <%= link_to "delete", comment.post, method: :delete, data: { confirm: "You sure?" } %>
-  <% end %>
-
-</span>
+     </span>
 </li>
 <% end %>
