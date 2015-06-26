@@ -1,16 +1,16 @@
 class CommentsController < ApplicationController
 	before_action :logged_in_user, only:[:create, :destroy]
-	before_action :correct_user, only: :destroy
+	#before_action :correct_user, only: :destroy
+    def index
+    end 
 
-	
-
-	def create
+    def create
+		
 		@post = Post.find(params[:post_id])
 	    @comment = @post.comments.build(comment_params)
 		@comment.user = current_user
         if @comment.save
-        	
-          render 'posts/show'
+           render 'posts/show'
         else
            @feed_items = []
            render 'posts/show'
@@ -18,8 +18,11 @@ class CommentsController < ApplicationController
 	end 
 
 	def destroy 
-		@post.comment.destroy
-		redirect_to request.referrer || root_url
+		@post = Post.find(params[:post_id])
+		@comment = Comment.find(params[:id])
+		@comment.user = current_user
+		@comment.destroy
+		render 'posts/show'
 	end 
 
 	private 
@@ -29,7 +32,7 @@ class CommentsController < ApplicationController
     end 
 
     def correct_user
-      @comment = current_user.comment.find_by(id: params[:id])
-      render 'post/show' if @comment.nil?
+      @post = current_user.posts.find_by(id: params[:id])
+      redirect_to root_url if @post.nil?
     end
 end
