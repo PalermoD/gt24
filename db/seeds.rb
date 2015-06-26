@@ -14,3 +14,10 @@ User.create!(name:  "Palermo Deschamps",
              activated: true,
              activated_at: Time.zone.now)
 
+User.create!(name:  "Mr.Network",
+             email: "deschamps@gmail.com",
+             password:              "spiderman",
+             password_confirmation: "spiderman",
+             admin:     false,
+             activated: true,
+             activated_at: Time.zone.now)
