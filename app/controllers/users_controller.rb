@@ -4,7 +4,7 @@ before_action :correct_user, only: [:edit, :update]
 before_action :admin_user, only: :destroy
   
   def show 
-    binding.pry
+    
   	 @user = User.find(params[:id])
      @posts = @user.posts.paginate(page: params[:page])
       #current_user.comments.build(params[:post])

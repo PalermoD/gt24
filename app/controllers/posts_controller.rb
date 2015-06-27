@@ -3,8 +3,9 @@ class PostsController < ApplicationController
 	before_action :correct_user, only: :destroy
 
   def show 
+    binding.pry
     @post = Post.find(params[:id])
-    @comments = @post.comments.paginate(page: params[:page])
+    @comment = Comment.new 
   end 
 
   def create
@@ -23,6 +24,10 @@ class PostsController < ApplicationController
 	end 
 
 	private 
+
+   def comment_params 
+    params.require(:comment).permit(:content, :picture)
+   end 
 
 	 def post_params
       params.require(:post).permit(:content, :picture)

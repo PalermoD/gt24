@@ -1,19 +1,17 @@
 class CommentsController < ApplicationController
 	before_action :logged_in_user, only:[:create, :destroy]
 	#before_action :correct_user, only: :destroy
-    def new 
-    	@comment = Comment.new
-    end 
-
+    
     def create
+    	@comment = current_user.comments.build(comment_params)
 		@post = Post.find(params[:post_id])
-	    @comment = @post.comments.build(comment_params)
+	    @comment = @post.comments.build(page: params[:page])
 		@comment.user = current_user
         if @comment.save
-           render 'posts/show'
+           redirect_to :back
         else
            @feed_items = []
-           render 'posts/show'
+           redirect_to :back
         end 
 	end 
 
@@ -22,7 +20,7 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:id])
 		@comment.user = current_user
 		@comment.destroy
-		render 'posts/show'
+		redirect_to :back
 	end 
 
 	private 
